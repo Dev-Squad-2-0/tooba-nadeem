@@ -2,7 +2,7 @@
 
 Hi! I'm **Tooba Nadeem**, an **AI & Data Science Intern** at **NetixSol**.
 
-This repository contains my internship tasks as I build my skills in AI, Data Science, and Python.
+This repository contains my internship tasks that I do as I build my skills in AI, Data Science, and Python.
 
 ## 📚 What I'm Learning
 
