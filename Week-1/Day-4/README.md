@@ -113,16 +113,18 @@ sales.pivot_table(index="City", columns="Year", values="Sales", aggfunc="mean")
 ### .merge()
 If we have two DataFrames.
 First one:
-ID	Name
-1	Ali
-2	Sara
-3	Ahmed
+| ID	| Name |
+|----|-------|
+| 1	| Ali |
+| 2	| Sara |
+| 3	| Ahmed |
 
 Second one:
-ID	Marks
-1	80
-2	95
-4	88
+| ID	| Marks |
+|----|-------|
+| 1	| 80 |
+| 2	| 95 |
+| 4	| 88 |
 
 Both have the column "ID", so we can combine them.
 ```python 
@@ -136,9 +138,10 @@ Keeps only matching IDs. (Only the common rows survive.)
 pd.merge(df1, df2, on="ID", how="inner")
 ```
 Result
-ID	Name	Marks
-1	Ali	80
-2	Sara	95
+| ID	| Name	| Marks |
+|----|------|-------|
+| 1	| Ali |	80 |
+| 2	| Sara |	95 |
 
 ID 3 and 4 disappear.
 
@@ -148,10 +151,11 @@ Keeps everything from the left DataFrame. (Keep all rows from the left table.)
 pd.merge(df1, df2, on="ID", how="left")
 ```
 Result
-ID	Name	Marks
-1	Ali	80
-2	Sara	95
-3	Ahmed	NaN
+| ID	| Name	| Marks |
+|----|------|-------|
+| 1	| Ali	| 80 |
+| 2	| Sara |	95 |
+| 3	| Ahmed	| NaN |
 
 Ahmed had no marks. So, Pandas fills in NaN.
 
@@ -161,10 +165,11 @@ Keeps everything from the right DataFrame.
 pd.merge(df1, df2, on="ID", how="right")
 ```
 Result
-ID	Name	Marks
-1	Ali	80
-2	Sara	95
-4	NaN	88
+| ID	| Name	| Marks |
+|----|------|-------|
+| 1	| Ali	| 80 |
+| 2	| Sara	| 95 |
+| 4	| NaN	| 88 |
 
 ID 4 exists only in the right table.
 
@@ -174,8 +179,9 @@ Keeps everything from both. Nothing is lost.
 pd.merge(df1, df2, on="ID", how="outer")
 ```
 Result
-ID	Name	Marks
-1	Ali	80
-2	Sara	95
-3	Ahmed	NaN
-4	NaN	88
+| ID |	Name	| Marks |
+|----|------|-------|
+| 1	| Ali	| 80 |
+| 2	| Sara	| 95 |
+| 3	| Ahmed	| NaN |
+| 4	| NaN	| 88 |
