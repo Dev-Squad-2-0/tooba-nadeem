@@ -46,39 +46,67 @@ Both rearrange data into a new table.
 
 Suppose we have: 
 
-City	Year	Sales
-Lahore	2023	100
-Lahore	2024	120
-Karachi	2023	90
-Karachi	2024	110
+| City |	Year |	Sales |
+|------|------|-------|
+| Lahore | 	2023	| 100 |
+| Lahore	| 2024	| 120 |
+| Karachi |	2023	| 90 |
+| Karachi	| 2024	| 110 |
 
 and we may want:
 
-City	2023	2024
-Lahore	100	120
-Karachi	90	110
+| City	| 2023 |	2024 |
+|------|------|------|
+| Lahore	| 100	| 120 |
+| Karachi	| 90	| 110 |
 
 That is reshaping.
 
 ### .pivot()
 - rearranges data
 - Works only when every combination is unique.
-- If there are two rows for: 
-Lahore
-2023
-it gives an error.
+- Example: Suppose the data is:
+
+| City | Year | Sales |
+|------|------|------:|
+| Lahore | 2023 | 100 |
+| Lahore | 2023 | 120 |
+
+Using the following python code, we combine the duplicate rows by taking their average:
+```python
+sales.pivot_table(
+    index="City",
+    columns="Year",
+    values="Sales",
+    aggfunc="mean"
+)
+```
+
+| City | 2023 |
+|------|------:|
+| Lahore | 110 |
 
 #### .pivot_table()
 - rearranges and summarizes data
 - Can handle duplicate values.
 - It combines them using an aggregation function (mean, sum, count, max, min).
 - Example:
-Two Lahore rows
-100
-120
+Suppose the data is:
 
-Using aggfunc="mean" becomes
-110
+| City | Year | Sales |
+|------|------|------|
+| Lahore | 2023 | 100 |
+| Lahore | 2023 | 120 |
+
+Using the following python code, we combine the duplicate rows by taking their average:
+```python
+sales.pivot_table(index="City", columns="Year", values="Sales", aggfunc="mean")
+```
+
+
+| City | 2023 |
+|------|------|
+| Lahore | 110 |
 
 
 ## What does .merge() do and what are the 4 types of joins?
