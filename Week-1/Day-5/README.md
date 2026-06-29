@@ -1,7 +1,7 @@
 # Concept Check
 ## 1.	When would you use a bar chart vs a histogram?
 ### Bar Chart
-- For Categorical Data
+- Most famous for Categorical Data (but also used for numerical and time-based data)
 - Shows categories
 - each bar represents one category
 - bars are separarted by space
