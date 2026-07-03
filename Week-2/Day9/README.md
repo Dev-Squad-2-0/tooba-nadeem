@@ -1,4 +1,3 @@
-```markdown
 # AFL Match Context Integration
 
 ## Overview
@@ -62,4 +61,3 @@ This project enriches the AFL Round-by-Round Player Performance dataset by integ
 - Pandas
 - Matplotlib
 - Jupyter Notebook
-```
