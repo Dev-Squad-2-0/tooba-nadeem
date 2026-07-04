@@ -9,6 +9,8 @@ This repository contains my internship tasks that I do as I build my skills in A
 - Python Programming
 - NumPy
 - Pandas
+- Matplotlib
+- Seaborn
 - Data Analysis
 - Data Science Fundamentals
 
