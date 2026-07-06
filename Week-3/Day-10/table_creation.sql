@@ -1,0 +1,23 @@
+CREATE TABLE superstore_sales (
+    row_id INTEGER PRIMARY KEY,
+    order_id TEXT,
+    order_date TEXT,
+    ship_date TEXT,
+    ship_mode TEXT,
+    customer_id TEXT,
+    customer_name TEXT,
+    segment TEXT,
+    country TEXT,
+    city TEXT,
+    state TEXT,
+    postal_code TEXT,
+    region TEXT,
+    product_id TEXT,
+    category TEXT,
+    sub_category TEXT,
+    product_name TEXT,
+    sales NUMERIC(10,2),
+    quantity INTEGER,
+    discount NUMERIC(4,2),
+    profit NUMERIC(12,4)
+);
