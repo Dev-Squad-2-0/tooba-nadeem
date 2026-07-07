@@ -7,50 +7,50 @@ Before writing queries:
 
 -	Identify the primary key of each table.
   - ## PKs:
-  ### country
-  country_id
-  
-  ### city
-  city_id
-  
-  ### language
-  language_id
-  
-  ### actor
-  actor_id
-  
-  ### address
-  address_id
-  
-  ### category
-  category_id
-
-  ### film
-  film_id
-  
-  ### customer
-  customer_id
-  
-  ### staff
-  staff_id
-  
-  ### film_actor (composite key)
-  actor_id, film_id
-  
-  ### film_category (composite key)
-  film_id, category_id
-  
-  ### inventory
-  inventory_id
-
-  ### rental
-  rental_id
-  
-  ### store
-  store_id
-  
-  ### payment
-  payment_id
+      - ### country
+      country_id
+      
+      - ### city
+      city_id
+      
+      - ### language
+      language_id
+      
+      ### actor
+      actor_id
+      
+      ### address
+      address_id
+      
+      ### category
+      category_id
+    
+      ### film
+      film_id
+      
+      ### customer
+      customer_id
+      
+      ### staff
+      staff_id
+      
+      ### film_actor (composite key)
+      actor_id, film_id
+      
+      ### film_category (composite key)
+      film_id, category_id
+      
+      ### inventory
+      inventory_id
+    
+      ### rental
+      rental_id
+      
+      ### store
+      store_id
+      
+      ### payment
+      payment_id
 
 
 -	Identify the foreign keys.
