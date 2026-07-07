@@ -78,3 +78,42 @@ Without looking at any online solution, determine the shortest path of table joi
 > **Which actor has generated the highest total rental revenue?**
 
 Since there is no direct relationship between the `actor` and `payment` tables, the required intermediate tables must first be identified before writing the SQL query.
+
+---
+
+# JOINs Used
+
+## INNER JOIN
+
+I used `INNER JOIN` throughout this assignment because each business question required only matching records between related tables. `INNER JOIN` returns rows only when a matching value exists in both tables, making it the most appropriate join type for these queries.
+
+The following relationships were used:
+
+- `customer` → `address`
+- `address` → `city`
+- `city` → `country`
+- `customer` → `payment`
+- `payment` → `rental`
+- `rental` → `inventory`
+- `inventory` → `film`
+- `film` → `film_category`
+- `film_category` → `category`
+- `film` → `film_actor`
+- `film_actor` → `actor`
+
+These joins allowed information stored across multiple normalized tables to be combined into meaningful business reports.
+
+---
+
+# Business Insights
+
+1. **Customer spending is highly concentrated among a few customers.**  
+   Eleanor Hunt was the highest-spending customer with a total of **$211.55**, followed closely by Karl Seal with **$208.58**. This suggests that a relatively small group of loyal customers contributes a significant portion of the rental revenue.
+
+2. **The Sports category generated the highest rental revenue.**  
+   Although the Sports category contains **74 films**, it also generated the highest total revenue (**$4892.19**), making it the most profitable category in the DVD rental business. Sci-Fi and Animation were the next highest revenue-generating categories.
+
+3. **Actor popularity directly impacts revenue generation.**  
+   Gina Degeneres generated the highest total rental revenue (**$3129.17**) among all actors, indicating that films featuring certain actors tend to attract more rentals and contribute more to the company's overall revenue.
+
+---
