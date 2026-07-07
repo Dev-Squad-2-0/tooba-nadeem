@@ -7,13 +7,13 @@ Before writing queries:
 
 -	Identify the primary key of each table.
   - ## PKs:
-      - ### country
+      ### country
       country_id
       
-      - ### city
+      ### city
       city_id
       
-      - ### language
+      ### language
       language_id
       
       ### actor
@@ -51,7 +51,7 @@ Before writing queries:
       
       ### payment
       payment_id
-
+---------
 
 -	Identify the foreign keys.
   - ## FKs
@@ -99,11 +99,12 @@ Before writing queries:
   
   ### payment
   customer_id, staff_id, rental_id
-
+------------------------
 -	Draw a simple relationship diagram (hand-drawn or using pgAdmin).
 
 I have attached the erd I got using pgAdmin 4
 
+------------
 # Part 2 — SQL JOIN Challenges
 1.Display Customer Name, Email, City, and Country.
 2.Display every payment with Customer Name, Film Title, and Amount Paid.
