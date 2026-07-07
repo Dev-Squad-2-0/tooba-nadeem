@@ -6,99 +6,99 @@
 Before writing queries:
 
 -	Identify the primary key of each table.
-## PKs:
-### country
-country_id
+  ## PKs:
+  ### country
+  country_id
+  
+  ### city
+  city_id
+  
+  ### language
+  language_id
+  
+  ### actor
+  actor_id
+  
+  ### address
+  address_id
+  
+  ### category
+  category_id
 
-### city
-city_id
+  ### film
+  film_id
+  
+  ### customer
+  customer_id
+  
+  ### staff
+  staff_id
+  
+  ### film_actor (composite key)
+  actor_id, film_id
+  
+  ### film_category (composite key)
+  film_id, category_id
+  
+  ### inventory
+  inventory_id
 
-### language
-language_id
-
-### actor
-actor_id
-
-### address
-address_id
-
-### category
-category_id
-
-### film
-film_id
-
-### customer
-customer_id
-
-### staff
-staff_id
-
-### film_actor (composite key)
-actor_id, film_id
-
-### film_category (composite key)
-film_id, category_id
-
-### inventory
-inventory_id
-
-### rental
-rental_id
-
-### store
-store_id
-
-### payment
-payment_id
+  ### rental
+  rental_id
+  
+  ### store
+  store_id
+  
+  ### payment
+  payment_id
 
 
 -	Identify the foreign keys.
-## FKs
-### country
-nil
+  ## FKs
+  ### country
+  nil
+  
+  ### city
+  country_id
+  
+  ### language
+  nil
+  
+  ### actor
+  nil
+  
+  ### address
+  city_id
+  
+  ### category
+  nil
 
-### city
-country_id
-
-### language
-nil
-
-### actor
-nil
-
-### address
-city_id
-
-### category
-nil
-
-### film
-language_id
-
-### customer
-address_id
-
-### staff
-address_id
-
-### film_actor
-nil
-
-### film_category
-nil
-
-### inventory
-film_id
-
-### rental
-inventory_id, customer_id, staff_id
-
-### store
-manager_id, address_id
-
-### payment
-customer_id, staff_id, rental_id
+  ### film
+  language_id
+  
+  ### customer
+  address_id
+  
+  ### staff
+  address_id
+  
+  ### film_actor
+  nil
+  
+  ### film_category
+  nil
+  
+  ### inventory
+  film_id
+  
+  ### rental
+  inventory_id, customer_id, staff_id
+  
+  ### store
+  manager_id, address_id
+  
+  ### payment
+  customer_id, staff_id, rental_id
 
 -	Draw a simple relationship diagram (hand-drawn or using pgAdmin).
 
