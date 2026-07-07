@@ -6,7 +6,7 @@
 Before writing queries:
 
 -	Identify the primary key of each table.
-  ## PKs:
+  - ## PKs:
   ### country
   country_id
   
@@ -54,7 +54,7 @@ Before writing queries:
 
 
 -	Identify the foreign keys.
-  ## FKs
+  - ## FKs
   ### country
   nil
   
