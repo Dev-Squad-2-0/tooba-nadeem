@@ -52,7 +52,7 @@ Yes. A subquery can return multiple rows. In that case, operators such as `IN`, 
 
 ## 7. Give an example of when `CASE WHEN` is useful inside an aggregate function.
 
-`CASE WHEN` is useful for conditional aggregation. For example, it can count only rentals that meet a condition or calculate the total revenue for a specific film rating while ignoring all others.# Concept Check
+`CASE WHEN` is useful for conditional aggregation. For example, it can count only rentals that meet a condition or calculate the total revenue for a specific film rating while ignoring all others.
 
 ## 1. What is the difference between `WHERE` and `HAVING`?
 
