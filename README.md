@@ -13,6 +13,7 @@ This repository contains my internship tasks that I do as I build my skills in A
 - Seaborn
 - Data Analysis
 - Data Science Fundamentals
+- PostgreSQL
 
 ## 🎯 Goals
 
