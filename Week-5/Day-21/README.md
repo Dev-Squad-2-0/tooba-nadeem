@@ -150,4 +150,4 @@ At the same time, some internal behavior became less transparent. The reasoning 
 
 AI & Data Science Intern
 
-NetixSol AI Internship Program
+NetixSol Pvt Ltd
