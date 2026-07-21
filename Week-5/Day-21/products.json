@@ -1,0 +1,14 @@
+{
+    "laptop_a": {
+        "price": 799,
+        "brand": "Dell"
+    },
+    "laptop_b": {
+        "price": 999,
+        "brand": "HP"
+    },
+    "tablet": {
+        "price": 399,
+        "brand": "Samsung"
+    }
+}

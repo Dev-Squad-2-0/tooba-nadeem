@@ -1,0 +1,7 @@
+langchain==0.3.30
+langchain-openai==0.3.32
+langchain-community==0.3.29
+
+openai
+python-dotenv
+pandas

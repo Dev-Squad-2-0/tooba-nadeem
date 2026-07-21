@@ -1,0 +1,2 @@
+Hello!
+This is a sample file for testing the read_text_file tool.
