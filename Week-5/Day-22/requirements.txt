@@ -1,0 +1,11 @@
+# Core LangChain & LangGraph
+langgraph==1.2.9
+langchain-core==1.5.0
+
+# LLM Provider
+langchain-openai==1.0.1
+openai
+
+# Utilities
+python-dotenv
+pandas
