@@ -1,0 +1,10 @@
+# CrewAI
+crewai==0.130.0
+
+# LLM Provider
+langchain-openai==1.0.1
+openai
+
+# Utilities
+python-dotenv
+pandas

@@ -1,0 +1,14 @@
+Plot_ID,District,Latitude,Longitude,NDVI,Land_Cover,Rainfall_mm,Surface_Temp_C,Vegetation_Health
+P001,Faisalabad,31.41,73.08,0.82,Agriculture,102.0,28.2,Healthy
+P002,Chiniot,31.72,72.98,0.41,Barren,45.0,35.7,Poor
+P003,Jhang,31.27,72.33,0.77,Forest,118.0,26.8,Excellent
+P004,Toba Tek Singh,30.97,72.48,,Agriculture,93.0,30.1,Healthy
+P005,Faisalabad,31.44,73.05,0.65,Urban,,33.4,Moderate
+P006,Chiniot,31.69,72.95,0.35,Barren,38.0,36.1,Poor
+P007,Jhang,31.2,72.3,1.25,Forest,122.0,25.9,Excellent
+P008,Faisalabad,31.4,73.11,0.71,Agriculture,110.0,28.5,Healthy
+P009,Toba Tek Singh,30.95,72.51,0.48,Urban,65.0,32.6,Moderate
+P010,Jhang,31.25,72.37,0.81,Forest,119.0,26.3,Excellent
+P011,Chiniot,31.71,72.99,0.29,Barren,40.0,35.5,Poor
+P012,Faisalabad,31.39,73.02,0.76,Agriculture,108.0,27.8,Healthy
+P003,Jhang,31.27,72.33,0.77,Forest,118.0,26.8,Excellent
