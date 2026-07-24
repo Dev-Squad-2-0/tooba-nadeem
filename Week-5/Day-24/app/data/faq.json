@@ -1,0 +1,68 @@
+{
+  "faqs": [
+    {
+      "id": "faq-001",
+      "project": "general",
+      "category": "account",
+      "question": "How do I reset my password?",
+      "answer": "Go to the login page and click 'Forgot Password'. A reset link is sent to your registered email and expires after 30 minutes.",
+      "keywords": ["password", "reset", "forgot", "login", "can't log in", "cannot log in"]
+    },
+    {
+      "id": "faq-002",
+      "project": "general",
+      "category": "account_recovery",
+      "question": "I lost access to my wallet / account, what do I do?",
+      "answer": "Account recovery requires manual identity verification by our security team. Please do not share your seed phrase with anyone, including support staff. A specialist will contact you within 24-48 hours.",
+      "keywords": ["lost wallet", "lost access", "recover account", "account recovery", "locked out", "seed phrase"]
+    },
+    {
+      "id": "faq-003",
+      "project": "gemlaunch",
+      "category": "billing",
+      "question": "Why was my IDO allocation charge declined?",
+      "answer": "Allocation charges can fail due to insufficient gas, network congestion, or KYC not being finalized. Check your KYC status in your GemLaunch dashboard before retrying.",
+      "keywords": ["allocation", "declined", "charge failed", "ido payment", "kyc"]
+    },
+    {
+      "id": "faq-004",
+      "project": "mbx_finance",
+      "category": "technical",
+      "question": "My swap or staking transaction is stuck pending.",
+      "answer": "Pending transactions are usually a network gas/congestion issue. Check the transaction hash on the relevant block explorer. If it has been pending over 2 hours, contact DeFi Support with the tx hash.",
+      "keywords": ["stuck", "pending", "swap failed", "staking issue", "transaction pending"]
+    },
+    {
+      "id": "faq-005",
+      "project": "blokkplay",
+      "category": "billing",
+      "question": "I want a refund for an NFT purchase on Blokkplay.",
+      "answer": "NFT purchases are final on-chain and not automatically refundable. Refund requests are reviewed case-by-case by Gaming Support for verified minting errors or duplicate charges.",
+      "keywords": ["refund", "nft purchase", "duplicate charge", "wrong item"]
+    },
+    {
+      "id": "faq-006",
+      "project": "incubator",
+      "category": "general",
+      "question": "How do I apply to the Web3Geeks incubator?",
+      "answer": "Submit a project application through the incubator page including your team, product, and traction. Our team reviews applications on a rolling basis.",
+      "keywords": ["incubator apply", "deal flow", "mentorship program", "startup application"]
+    },
+    {
+      "id": "faq-007",
+      "project": "fight_club_network",
+      "category": "technical",
+      "question": "My match result or reward wasn't recorded.",
+      "answer": "Match results sync on-chain within 15 minutes. If a reward is still missing after that, contact Gaming Support with your match ID.",
+      "keywords": ["match result", "reward missing", "not recorded", "fight club"]
+    },
+    {
+      "id": "faq-008",
+      "project": "general",
+      "category": "billing",
+      "question": "How do I dispute a billing charge?",
+      "answer": "Billing disputes require a human review to verify transaction records before any adjustment or reversal is issued. This cannot be resolved automatically.",
+      "keywords": ["billing dispute", "chargeback", "wrong charge", "overcharged"]
+    }
+  ]
+}

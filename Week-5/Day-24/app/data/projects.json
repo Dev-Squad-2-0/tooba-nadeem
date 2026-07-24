@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "key": "blockworker",
+      "name": "Blockworker",
+      "category": "Blockchain Platform",
+      "keywords": ["blockworker", "job board", "blockchain jobs", "professional profile", "hiring"],
+      "department": "Platform Support",
+      "escalation_contact": "platform-support@web3geeks.com"
+    },
+    {
+      "key": "blokkplay",
+      "name": "Blokkplay",
+      "category": "Gaming / NFT Marketplace",
+      "keywords": ["blokkplay", "nft marketplace", "p2e", "play to earn", "in-game reward"],
+      "department": "Gaming Support",
+      "escalation_contact": "gaming-support@web3geeks.com"
+    },
+    {
+      "key": "darkmaze",
+      "name": "DarkMaze",
+      "category": "GameFi",
+      "keywords": ["darkmaze", "maze game", "gamefi reward", "dungeon"],
+      "department": "Gaming Support",
+      "escalation_contact": "gaming-support@web3geeks.com"
+    },
+    {
+      "key": "fight_club_network",
+      "name": "Fight Club Network",
+      "category": "Sports & Gaming",
+      "keywords": ["fight club network", "fcn", "combat sports", "fight nft", "match result"],
+      "department": "Gaming Support",
+      "escalation_contact": "gaming-support@web3geeks.com"
+    },
+    {
+      "key": "gemlaunch",
+      "name": "GemLaunch",
+      "category": "Launchpad",
+      "keywords": ["gemlaunch", "ido", "launchpad", "token sale", "allocation", "whitelist"],
+      "department": "Launchpad Operations",
+      "escalation_contact": "launchpad-ops@web3geeks.com"
+    },
+    {
+      "key": "gt_verse",
+      "name": "GT Verse",
+      "category": "Metaverse",
+      "keywords": ["gt verse", "metaverse", "virtual world", "avatar", "land plot"],
+      "department": "Platform Support",
+      "escalation_contact": "platform-support@web3geeks.com"
+    },
+    {
+      "key": "mbx_finance",
+      "name": "MBX Finance",
+      "category": "DeFi",
+      "keywords": ["mbx finance", "mbx", "yield", "staking", "liquidity pool", "swap failed"],
+      "department": "DeFi Support",
+      "escalation_contact": "defi-support@web3geeks.com"
+    },
+    {
+      "key": "statbreak",
+      "name": "StatBreak",
+      "category": "Analytics",
+      "keywords": ["statbreak", "analytics dashboard", "on-chain stats", "data export"],
+      "department": "Platform Support",
+      "escalation_contact": "platform-support@web3geeks.com"
+    },
+    {
+      "key": "stellar_void",
+      "name": "Stellar Void",
+      "category": "Space Gaming",
+      "keywords": ["stellar void", "space game", "starship nft"],
+      "department": "Gaming Support",
+      "escalation_contact": "gaming-support@web3geeks.com"
+    },
+    {
+      "key": "incubator",
+      "name": "Web3Geeks Incubator",
+      "category": "Incubator / Deal Flow",
+      "keywords": ["incubator", "deal flow", "mentorship", "startup application", "education hub"],
+      "department": "Incubator Team",
+      "escalation_contact": "incubator@web3geeks.com"
+    },
+    {
+      "key": "general",
+      "name": "General / Unspecified",
+      "category": "General",
+      "keywords": [],
+      "department": "General Support",
+      "escalation_contact": "contact@web3geeks.com"
+    }
+  ]
+}
