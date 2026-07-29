@@ -31,6 +31,8 @@ Week6/
     │
     ├── chat.py
     ├── requirements.txt
+    ├── .env.example
+    ├── .gitignore
     └── day3_demo.ipynb
 ```
 
