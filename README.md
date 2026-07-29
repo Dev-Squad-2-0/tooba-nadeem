@@ -14,7 +14,20 @@ This repository contains my internship tasks that I do as I build my skills in A
 - Data Analysis
 - Data Science Fundamentals
 - PostgreSQL
+- SQL (CTEs, Window Functions, & Subqueries)
+- Business KPIs
 - Machine Learning
+- Sklearn
+- Scipy
+- Tool calling
+- APIs
+- JSON Schemas
+- LangChain
+- LangGraph
+- CrewAI
+- FastAPI
+- Chroma
+- FAISS
 
 ## 🎯 Goals
 
