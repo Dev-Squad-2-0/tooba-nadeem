@@ -27,8 +27,6 @@ Week6/
     ├── evaluation/
     │   ├── guardrail_tests.csv
     │   └── evaluation_report.md
-    │
-    ├── chat.py
     ├── requirements.txt
     ├── .env.example
     ├── .gitignore
