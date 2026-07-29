@@ -1,4 +1,5 @@
 ## Structure:
+```python
 Week6/
 └── Day3/
     │
@@ -31,7 +32,7 @@ Week6/
     ├── chat.py
     ├── requirements.txt
     └── day3_demo.ipynb
-
+```
 
 
 
