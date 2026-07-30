@@ -29,10 +29,6 @@ Week6/
     │
     ├── tests/
     │   ├── test_guardrails.py
-    │   ├── test_router.py
-    │   ├── test_resolver.py
-    │   ├── test_prediction.py
-    │   └── test_graph.py
     │
     ├── evaluation/
     │   ├── guardrail_tests.csv
