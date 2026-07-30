@@ -51,6 +51,32 @@ Week6/
     ├── .gitignore
     └── day4_demo.ipynb
 ```
+## Task 1: Graph Design
+
+The system uses LangGraph to explicitly route each user query to the correct processing path.
+
+The shared `AgentState` stores the user's query, conversation history, detected intent, tool results, validation information, and final response.
+
+The graph follows this structure:
+
+```text
+START
+  |
+  v
+Router
+  |
+  +---- factual ------> Factual Node ----+
+  |                                      |
+  +---- retrieval ----> Retrieval Node --+
+  |                                      |
+  +---- prediction ---> Prediction Node -+--> Validation --> Response --> END
+  |                                      |
+  +---- off_topic ----> Off-topic Node --+
+```
+
+Explicit routing is safer than allowing one generic agent to decide everything because each type of request has different requirements. In particular, prediction requests must always use the prediction tools and present their results as probabilities rather than certain outcomes.
+
+LangGraph also makes the control flow explicit, which makes it easier to validate tool results, handle failures, ask for clarification, and prevent the system from guessing when required information is missing.
 
 # Task 1 requirement:
 ## Why Explicit LangGraph Routing Is Safer
