@@ -24,10 +24,12 @@ This repository contains my internship tasks that I do as I build my skills in A
 - JSON Schemas
 - LangChain
 - LangGraph
+- pydantic
 - CrewAI
 - FastAPI
-- Chroma
-- FAISS
+- Chroma, FAISS (pemding)
+- Openrouter
+- OpenAI
 
 ## 🎯 Goals
 
