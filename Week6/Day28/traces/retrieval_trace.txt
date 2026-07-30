@@ -1,0 +1,84 @@
+# DAY 4 ANNOTATED STATE TRACE
+
+TRACE TYPE:
+Retrieval Request
+
+USER QUERY:
+What were Nick Daicos' stats last round?
+
+GRAPH FLOW:
+START
+|
+v
+router
+|
+v
+retrieval
+|
+v
+validation
+|
++---- success ------> response
+|
++---- clarification_needed ------> clarification
+|
+v
+END
+
+## STEP 1: ROUTER
+
+Input:
+user_query = "What were Nick Daicos' stats last round?"
+
+Expected intent:
+retrieval
+
+The router classifies the request as a retrieval request because the
+user is asking for player statistics rather than a general factual
+description or a prediction.
+
+## STEP 2: RETRIEVAL NODE
+
+The retrieval node receives the retrieval request.
+
+The retrieval branch is responsible for obtaining statistics using the
+available AFL retrieval functions.
+
+Required retrieval information is checked before the tool is called.
+
+The system is designed not to guess when required player, season, or
+round information is missing.
+
+## STEP 3: VALIDATION
+
+The validation node checks:
+
+* whether an error occurred
+* whether the retrieval tool returned a result
+* whether the result explicitly indicates that data was not found
+
+Possible outcomes:
+
+success
+Continue to the response node.
+
+clarification_needed
+Ask the user for additional information.
+
+## STEP 4: RESPONSE
+
+If validation succeeds, the response node formats the retrieved
+statistics into a user-facing response.
+
+If retrieval fails or the required information is unavailable, the
+graph follows the clarification path instead of inventing statistics.
+
+## ANNOTATION
+
+This trace demonstrates the purpose of separating retrieval from the
+general chat path.
+
+Statistics should be obtained from the retrieval functionality and
+validated before being presented to the user. The validation step also
+provides a controlled fallback when the requested information cannot be
+retrieved.

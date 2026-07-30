@@ -1,0 +1,96 @@
+# DAY 4 ANNOTATED STATE TRACE
+
+TRACE TYPE:
+Match Prediction
+
+USER QUERY:
+Will Collingwood beat Geelong this week?
+
+GRAPH FLOW:
+START
+|
+v
+router
+|
+v
+prediction
+|
+v
+prediction tool
+|
+v
+validation
+|
+v
+response
+|
+v
+END
+
+## STEP 1: ROUTER
+
+Input:
+user_query = "Will Collingwood beat Geelong this week?"
+
+Expected intent:
+prediction
+
+The router identifies the request as a prediction because the user is
+asking which team is more likely to win a future match.
+
+## STEP 2: PREDICTION NODE
+
+The prediction node receives the prediction request.
+
+The node supports match-winner predictions through the
+predict_match tool.
+
+The prediction input contains the information required by the
+prediction function, including:
+
+* match date
+* home team
+* away team
+
+## STEP 3: PREDICTION TOOL
+
+The prediction tool executes the match-winner prediction model.
+
+The returned result contains prediction information including the
+predicted winner and win probabilities for the teams.
+
+## STEP 4: VALIDATION
+
+The validation node checks that the prediction tool produced a usable
+result.
+
+If the result is missing or an error occurs, the system does not
+continue as though a valid prediction had been produced.
+
+Instead, the graph can route the request to clarification handling.
+
+## STEP 5: RESPONSE FORMATTING
+
+The response node formats the prediction using probability values.
+
+The response explicitly states that the result is a model-based
+prediction and not a certainty.
+
+Example response structure:
+
+Prediction: [team] are the more likely winner.
+
+[home team]: [probability]% win probability
+[away team]: [probability]% win probability
+
+This is a model-based prediction, not a certainty.
+
+## ANNOTATION
+
+This trace demonstrates the main benefit of explicit LangGraph routing
+for prediction requests.
+
+Prediction requests are separated from ordinary factual questions and
+pass through a dedicated prediction path, validation, and probabilistic
+response formatting. This reduces the chance of presenting a model
+prediction as a guaranteed outcome.

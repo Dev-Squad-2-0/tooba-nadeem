@@ -1,0 +1,80 @@
+# DAY 4 ANNOTATED STATE TRACE
+
+TRACE TYPE:
+Clarification / Missing Information
+
+EXAMPLE USER QUERY:
+Who will win the next match?
+
+GRAPH FLOW:
+START
+|
+v
+router
+|
+v
+prediction
+|
+v
+validation
+|
+v
+clarification
+|
+v
+END
+
+## STEP 1: ROUTER
+
+The query is identified as a prediction request.
+
+intent = prediction
+
+## STEP 2: PREDICTION NODE
+
+The prediction branch requires information needed by the prediction
+model.
+
+For a match prediction, the system requires information such as:
+
+* match date
+* home team
+* away team
+
+The query does not identify the specific match or teams.
+
+## STEP 3: VALIDATION
+
+The validation layer checks whether the prediction node returned a
+usable result.
+
+Because required prediction information is missing, the request cannot
+be safely completed.
+
+validation_result = clarification_needed
+
+## STEP 4: CLARIFICATION NODE
+
+The graph routes the request to the clarification node.
+
+The clarification response asks the user to provide the specific AFL
+teams, player, match, or date required to answer accurately.
+
+## STEP 5: FINAL RESPONSE
+
+Example response:
+
+"I need a little more information before I can answer that accurately.
+Please provide the specific AFL teams, player, match date, or other
+missing detail."
+
+## ANNOTATION
+
+This trace demonstrates the fallback behavior for ambiguous requests.
+
+The system does not guess which AFL match the user means. Instead, the
+validation layer detects the missing information and routes the request
+to clarification.
+
+This is important for prediction systems because making a prediction
+for an incorrectly assumed match could produce a misleading result.
