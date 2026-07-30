@@ -1,3 +1,5 @@
+
+# My project sturcture
 ```python
 Week6/
 └── Day4/
@@ -19,7 +21,7 @@ Week6/
     │   ├── state.py
     │   ├── router.py
     │   ├── retrieval.py
-    │   ├── predict.py          ← YOUR Day 2 prediction code
+    │   ├── predict.py          ← Day 2 prediction code
     │   ├── resolver.py
     │   ├── tools.py
     │   ├── nodes.py
@@ -49,3 +51,11 @@ Week6/
     ├── .gitignore
     └── day4_demo.ipynb
 ```
+
+# Task 1 requirement:
+## Why Explicit LangGraph Routing Is Safer
+
+The system uses explicit LangGraph routing instead of allowing one general-purpose agent to freely decide which tool or action to use. The router first classifies each request as `factual`, `retrieval`, `prediction`, or `off_topic`, and LangGraph then sends the request to the corresponding controlled branch.
+
+This is safer because each type of request has a defined processing path. In particular, prediction requests always pass through the prediction and response-formatting logic, ensuring that model probabilities are presented as probabilistic predictions rather than certain outcomes. Explicit routing also reduces the risk of calling the wrong tool, using unsupported capabilities, or allowing the agent to guess when required information is unavailable.
+
