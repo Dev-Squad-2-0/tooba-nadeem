@@ -1,5 +1,5 @@
 
-# My project sturcture
+# My project structure
 ```python
 Week6/
 └── Day4/
