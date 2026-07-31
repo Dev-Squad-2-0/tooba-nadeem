@@ -1,0 +1,22 @@
+# Core LangChain
+langchain-core==1.5.0
+langchain-openai==1.0.1
+
+# LangGraph
+langgraph==1.2.9
+
+# LLM Provider
+openai
+
+# Utilities
+python-dotenv
+
+# Data/ML
+joblib
+pandas
+scikit-learn==1.8.0
+
+# Day 5: API wrapper
+fastapi
+uvicorn[standard]
+pydantic
