@@ -5,6 +5,64 @@ added on top of the Days 1–4 AFL agent. See `executive_report.md` for the
 full summary and `evaluation/day5_evaluation_report.md` for detailed
 results.
 
+# My Project Structure
+
+```text
+Week6/
+└── Day5/
+    │
+    ├── data/
+    │   ├── cleaned_round_by_round_stats_v2.csv
+    │   ├── cleaned_team_matches.csv
+    │   ├── cleaned_seasonal_stats.csv
+    │   ├── match_prediction_features.csv
+    │   └── player_prediction_features.csv
+    │
+    ├── models/
+    │   ├── match_winner_gradient_boosting.joblib
+    │   └── top_player_random_forest.joblib
+    │
+    ├── src/
+    │   ├── config.py
+    │   ├── prompts.py
+    │   ├── state.py
+    │   ├── router.py
+    │   ├── retrieval.py
+    │   ├── predict.py          # Day 2 prediction code
+    │   ├── resolver.py
+    │   ├── tools.py
+    │   ├── nodes.py
+    │   ├── guardrails.py
+    │   ├── logging_utils.py
+    │   └── agent.py
+    │
+    ├── tests/
+    │   └── test_guardrails.py
+    │
+    ├── evaluation/
+    │   ├── guardrail_tests.csv
+    │   ├── evaluation_report.md
+    │   ├── routing_tests.csv
+    │   ├── routing_results.csv
+    │   ├── day5_test_cases.py
+    │   ├── run_day5_evaluation_stub.py
+    │   ├── run_day5_evaluation_live.py
+    │   ├── day5_live_results.csv
+    │   ├── evaluation_results_report.md
+    │   └── day4_report.md
+    │
+    ├── traces/
+    │   ├── prediction_trace.txt
+    │   ├── retrieval_trace.txt
+    │   └── clarification_trace.txt
+    ├── logs/
+    │ └── agent_events.jsonl
+    │
+    ├── requirements.txt
+    ├── .env.example 
+    └── .gitignore
+```
+
 ## What's new in Day 5
 
 - `src/tools.py` — prediction tools (`predict_match`, `predict_top_players`)
