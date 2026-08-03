@@ -27,9 +27,13 @@ This repository contains my internship tasks that I do as I build my skills in A
 - pydantic
 - CrewAI
 - FastAPI
-- Chroma, FAISS (pemding)
-- Openrouter
+- OpenRouter
 - OpenAI
+
+# loading :)
+- Chroma, FAISS
+- Docker
+- Fish Audio & ElevenLabs (voice AI/ genAI platforms)
 
 ## 🎯 Goals
 
