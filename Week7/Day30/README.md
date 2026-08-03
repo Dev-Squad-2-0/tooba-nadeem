@@ -32,6 +32,16 @@ real-estate-agent/
 
 app/
 │
+├── docs/
+│   ├── 01_Executive_Report.pdf
+│   ├── 02_System_Architecture.pdf
+│   ├── 03_API_Documentation.pdf
+│   ├── 04_Admin_Guide.pdf
+│   ├── 05_User_Guide.pdf
+│   ├── 06_Monitoring_Plan.pdf
+│   ├── 07_Demo_Script.pdf
+│   └── 08_Slide_Deck.pptx
+|
 ├── api/
 │
 ├── graph/
