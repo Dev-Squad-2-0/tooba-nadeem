@@ -29,7 +29,6 @@ Caller
 ## Planned folder structure
 ```python
 real-estate-agent/
-
 app/
 │
 ├── docs/
