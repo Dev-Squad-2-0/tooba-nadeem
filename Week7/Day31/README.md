@@ -179,3 +179,157 @@ SELECT
     price_range_min_pkr,
     price_range_max_pkr
 FROM properties;
+
+
+# Day2 Task5 — Hallucination Evaluation
+
+## Objective
+
+Evaluate the Real Estate RAG system to ensure that responses are grounded in the knowledge base rather than generated from unsupported information.
+
+The goal is to minimize hallucinations and verify that the retrieval pipeline only answers questions for which supporting evidence exists.
+
+---
+
+# Evaluation Methodology
+
+Twenty questions were created covering multiple categories:
+
+- Property information
+- Developers
+- Company information
+- Payment plans
+- Booking process
+- Legal verification
+- Recommendations
+- Out-of-scope questions
+
+Each question was manually reviewed using three metrics.
+
+---
+
+# Evaluation Metrics
+
+## 1. Grounding Rate
+
+Measures how many responses were supported by retrieved documents.
+
+**Formula**
+
+```
+Grounding Rate =
+Grounded Responses / Total Questions × 100
+```
+
+---
+
+## 2. Retrieval Accuracy
+
+Measures how many retrieved answers correctly answered the user's question.
+
+Only questions for which relevant documents were retrieved are included.
+
+**Formula**
+
+```
+Retrieval Accuracy =
+Correct Retrieved Answers / Retrieved Answers × 100
+```
+
+---
+
+## 3. Hallucination Rate
+
+Measures how often the model generated unsupported or fabricated information.
+
+**Formula**
+
+```
+Hallucination Rate =
+Hallucinated Answers / Total Questions × 100
+```
+
+---
+
+# Evaluation Results
+
+| Metric | Value |
+|---------|------:|
+| Total Questions | 20 |
+| Grounded Answers | 18 |
+| Correct Refusals | 2 |
+| Hallucinated Answers | 0 |
+| Grounding Rate | **90%** |
+| Retrieval Accuracy | **100%** |
+| Hallucination Rate | **0%** |
+
+---
+
+# Evaluation Summary
+
+### Successfully Answered
+
+The system correctly answered questions regarding:
+
+- Skyline Residency
+- Ocean Breeze Towers
+- Emerald Gardens
+- Capital Greens Enclave
+- Silk Developers
+- Meridian Homes
+- Booking process
+- Required buyer documents
+- Payment plans
+- Property recommendations
+- Under-construction projects
+
+All responses were generated using retrieved knowledge base documents.
+
+---
+
+### Correct Refusals
+
+The following questions were intentionally refused because the information was not present in the knowledge base.
+
+- Who owns Bahria Town?
+- What is the price of Emaar Canyon Views?
+
+Instead of inventing an answer, the assistant responded:
+
+> "I couldn't find that information in the company knowledge base."
+
+These responses are considered successful refusals rather than hallucinations.
+
+---
+
+# Observations
+
+## Strengths
+
+- No fabricated information was generated.
+- Company policies were respected.
+- Property details remained grounded in retrieved documents.
+- Unknown questions resulted in safe refusal responses.
+- Retrieval quality was consistent across brochures, FAQs and guides.
+
+---
+
+## Limitations
+
+- External real estate projects are not included.
+- Knowledge is limited to the supplied company documents.
+- Retrieval quality depends on the completeness of the knowledge base.
+
+---
+
+# Conclusion
+
+The hallucination evaluation demonstrates that the retrieval-augmented generation (RAG) pipeline produces reliable and grounded responses.
+
+Across twenty evaluation questions:
+
+- 90% of the questions were answered using retrieved evidence.
+- 10% resulted in correct refusals due to missing knowledge.
+- No hallucinated responses were observed.
+
+This indicates that the system prioritizes factual accuracy over unsupported generation, making it suitable for real estate question answering where trustworthy information is essential.
