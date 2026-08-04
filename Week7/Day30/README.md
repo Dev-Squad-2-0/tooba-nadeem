@@ -28,56 +28,38 @@ Caller
 
 ## Planned folder structure
 ```python
-real-estate-agent/
+real_estate_voice_agent/
 │
 ├── app/
-│
-│   ├── api/
-│   │
-│   ├── graph/
-│   │   ├── state.py
-│   │   ├── nodes.py
-│   │   ├── router.py
-│   │   └── graph.py
+│   ├── config.py
+│   ├── main.py
 │   │
 │   ├── rag/
+│   │   ├── document_loader.py
+│   │   ├── text_splitter.py
+│   │   ├── embeddings.py
+│   │   ├── vector_store.py
+│   │   ├── retriever.py
+│   │   └── rag_pipeline.py
 │   │
-│   ├── voice/
-│   │
+│   ├── graph/
 │   ├── tools/
-│   │
-│   ├── workflows/
-│   │
 │   ├── prompts/
-│   │
 │   ├── database/
-│   │
-│   │   ├── structured/
-│   │   │      properties.csv
-│   │   │      developers.csv
-│   │   │      ...
-│   │   │
-│   │   ├── knowledge/
-│   │   │
-│   │   │     brochures/
-│   │   │     developers/
-│   │   │     guides/
-│   │   │     company/
-│   │   │     faqs/
-│   │   │
-│   │   └── chroma/
-│   │
-│   ├── evaluation/
-│   │
-│   └── main.py
+│   ├── voice/
+│   └── workflows/
+│
+├── database/
+│   ├── structured/
+│   ├── knowledge/
+│   └── chroma/
 │
 ├── docs/
 │
-├── tests/
+├── evaluation/
 │
 ├── requirements.txt
-│
-├── Dockerfile
-│
-└── README.md
+├── .env.example
+├── README.md
+└── venv/
 ```
