@@ -29,47 +29,55 @@ Caller
 ## Planned folder structure
 ```python
 real-estate-agent/
-app/
+│
+├── app/
+│
+│   ├── api/
+│   │
+│   ├── graph/
+│   │   ├── state.py
+│   │   ├── nodes.py
+│   │   ├── router.py
+│   │   └── graph.py
+│   │
+│   ├── rag/
+│   │
+│   ├── voice/
+│   │
+│   ├── tools/
+│   │
+│   ├── workflows/
+│   │
+│   ├── prompts/
+│   │
+│   ├── database/
+│   │
+│   │   ├── structured/
+│   │   │      properties.csv
+│   │   │      developers.csv
+│   │   │      ...
+│   │   │
+│   │   ├── knowledge/
+│   │   │
+│   │   │     brochures/
+│   │   │     developers/
+│   │   │     guides/
+│   │   │     company/
+│   │   │     faqs/
+│   │   │
+│   │   └── chroma/
+│   │
+│   ├── evaluation/
+│   │
+│   └── main.py
 │
 ├── docs/
-│   ├── 01_Executive_Report.pdf
-│   ├── 02_System_Architecture.pdf
-│   ├── 03_API_Documentation.pdf
-│   ├── 04_Admin_Guide.pdf
-│   ├── 05_User_Guide.pdf
-│   ├── 06_Monitoring_Plan.pdf
-│   ├── 07_Demo_Script.pdf
-│   └── 08_Slide_Deck.pptx
-|
-├── api/
 │
-├── graph/
-│   ├── state.py
-│   ├── nodes.py
-│   ├── router.py
-│   └── graph.py
+├── tests/
 │
-├── rag/
+├── requirements.txt
 │
-├── voice/
-│   ├── stt.py
-│   ├── tts.py
-│   └── streaming.py
+├── Dockerfile
 │
-├── tools/
-│   ├── calendar.py
-│   ├── email.py
-│   ├── property_search.py
-│   ├── crm.py
-│   └── availability.py
-│
-├── workflows/
-│
-├── prompts/
-│
-├── database/
-│
-├── evaluation/
-│
-└── main.py
+└── README.md
 ```
