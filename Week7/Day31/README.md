@@ -29,3 +29,50 @@ This configuration was selected because it consistently returned the most releva
 ### Notes
 
 The vector database is persisted locally using ChromaDB. On subsequent runs, the existing vector database is loaded instead of rebuilding embeddings, which significantly reduces startup time. The database is only rebuilt when the knowledge base changes.
+
+
+## Day2 Task3 – Structured Retrieval (SQL + Semantic Search)
+
+### Objective
+
+To reduce hallucinations and improve retrieval efficiency, the knowledge base was divided into two retrieval systems:
+
+- **Structured Retrieval (SQLite)** for factual tabular information.
+- **Semantic Retrieval (Chroma Vector Database)** for unstructured documents.
+
+---
+
+## Structured Retrieval (SQLite)
+
+A SQLite database was created from the structured CSV datasets.
+
+### Database Tables
+
+- properties
+- agents
+- payment_plans
+- developers
+- amenities
+- schools
+- hospitals
+
+### SQL Retrieval
+
+Structured SQL queries were implemented for information requiring exact values.
+
+Examples include:
+
+- Property prices
+- Availability status
+- Plot sizes
+- Sales agent information
+
+Example SQL query:
+
+```sql
+SELECT
+    project_name,
+    city,
+    price_range_min_pkr,
+    price_range_max_pkr
+FROM properties;
