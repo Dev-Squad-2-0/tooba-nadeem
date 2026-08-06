@@ -8,7 +8,7 @@ Root Cause:
 - Domain-specific acronyms (e.g. DHA) also required keyterm prompting.
 
 Resolution:
-- In .env file:
+- In `.env` file:
 ```python
 DEEPGRAM_MODEL=nova-3
 DEEPGRAM_LANGUAGE=ur
