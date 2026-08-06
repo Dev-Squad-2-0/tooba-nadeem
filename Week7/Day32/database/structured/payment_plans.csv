@@ -1,0 +1,10 @@
+plan_id,property_id,plan_name,booking_amount_pct,down_payment_pct,installment_years,installment_frequency,number_of_installments,possession_payment_pct,notes
+PP001,PROP001,Skyline Residency - 4 Year Easy Plan,10,15,4,Quarterly,16,15,"10% booking, 15% down payment within 30 days, 60% in 16 equal quarterly installments over 4 years, remaining 15% on possession."
+PP002,PROP001,Skyline Residency - 2 Year Fast-Track Plan,20,20,2,Quarterly,8,10,"20% booking, 20% down payment, 50% in 8 quarterly installments over 2 years, 10% on possession; 5% price discount versus the 4-Year Plan."
+PP003,PROP002,Emerald Gardens - Full Cash Purchase,100,0,0,N/A,0,0,"Since Emerald Gardens is ready for possession with individual title transfer, only full cash or bank-financed purchase is offered; no developer installment plan."
+PP004,PROP003,Ocean Breeze Towers - 5 Year Construction-Linked Plan,10,10,5,Quarterly,20,15,"10% booking, 10% down payment, 65% across 20 quarterly installments over 5 years tied to construction milestones, 15% on possession."
+PP005,PROP004,Horizon Business Bay - 3 Year Investor Plan,15,15,3,Monthly,36,10,"15% booking, 15% down payment, 60% in 36 equal monthly installments over 3 years, 10% on possession; monthly plan designed for salaried investors."
+PP006,PROP005,Capital Greens Enclave - 3 Year Plot Plan,10,10,3,Quarterly,12,20,"10% booking, 10% down payment, 60% in 12 quarterly installments over 3 years, 20% on possession/development completion of the respective block."
+PP007,PROP006,The Pearl Heights - Full Cash / Bank Finance,100,0,0,N/A,0,0,"The Pearl Heights is fully handed over; purchases are via outright cash payment or third-party bank mortgage financing, not a developer installment plan."
+PP008,PROP007,Al-Noor Valley - 4 Year Plot Plan,10,10,4,Quarterly,16,10,"10% booking, 10% down payment, 70% in 16 quarterly installments over 4 years, 10% on possession of the respective development block."
+PP009,PROP008,Al-Noor Business Square - Full Cash / Bank Finance,100,0,0,N/A,0,0,Al-Noor Business Square is fully constructed and handed over; units are purchased via cash or bank commercial financing.
