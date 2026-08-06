@@ -8,9 +8,42 @@ Root Cause:
 - Domain-specific acronyms (e.g. DHA) also required keyterm prompting.
 
 Resolution:
-- Model: nova-3
-- Language: ur
-- Added keyterms for real estate terminology.
+- In .env file:
+```python
+DEEPGRAM_MODEL=nova-3
+DEEPGRAM_LANGUAGE=ur
+```
+- and in stt_deepgram.py:
+```python
+# Domain-specific terms Deepgram's general language model won't reliably
+# recognize on its own (Pakistani real-estate abbreviations, area names,
+# and this project's own developer/project names). Keyterm Prompting
+# biases the acoustic model toward these at inference time without
+# retraining. Confirmed compatible with Nova-3 + language=ur.
+REAL_ESTATE_KEYTERMS = [
+    "DHA", "Bahria Town", "Gulberg", "Askari", "Model Town",
+    "Skyline Residency", "Emerald Gardens", "Ocean Breeze Towers",
+    "Horizon Business Bay", "Capital Greens Enclave", "The Pearl Heights",
+    "Al-Noor Valley", "Al-Noor Business Square",
+]
+```
+-then in function call:
+```python
+        self._connection_ctx = self._client.listen.v1.connect(
+            model=config.DEEPGRAM_MODEL,
+            language=config.DEEPGRAM_LANGUAGE,
+            smart_format=True,
+            interim_results=True,
+            # Voice-agent turn-taking: Deepgram flags a final segment once
+            # ~endpointing ms of silence is detected. 300ms keeps latency
+            # low without cutting the buyer off mid-thought.
+            endpointing=300, # back to 300 -- the 100ms recommendation from Deepgram's docs was specifically for `language=multi` code-switching; you're on monolingual `ur` now, so the standard default applies
+            encoding="linear16",
+            sample_rate=16000,
+            channels=1,
+            **keyterm=REAL_ESTATE_KEYTERMS,**
+        )
+```
 
 Result:
 - Verified accurate transcription of real Pakistani Urdu speech.
