@@ -13,7 +13,7 @@ Resolution:
 DEEPGRAM_MODEL=nova-3
 DEEPGRAM_LANGUAGE=ur
 ```
-- and in stt_deepgram.py:
+-  and in `stt_deepgram.py`:
 ```python
 # Domain-specific terms Deepgram's general language model won't reliably
 # recognize on its own (Pakistani real-estate abbreviations, area names,
@@ -27,7 +27,7 @@ REAL_ESTATE_KEYTERMS = [
     "Al-Noor Valley", "Al-Noor Business Square",
 ]
 ```
--then in function call:
+- then in function call:
 ```python
         self._connection_ctx = self._client.listen.v1.connect(
             model=config.DEEPGRAM_MODEL,
