@@ -486,17 +486,108 @@ notes
 
 # Deferred: n8n Workflow
 
-An n8n workflow has been prepared for external workflow automation:
+An n8n workflow was prepared and successfully validated as an external automation layer:
 
 ```text
 real_estate_workflow.json
 ```
 
-The workflow is intended to connect the voice-agent API with the appointment workflow and provide an automation layer around the existing FastAPI endpoints.
+The workflow was tested against the FastAPI appointment endpoints and successfully completed the appointment-booking flow.
 
-However, the n8n workflow is **not considered part of the completed Day 4 validation yet**.
+The validated workflow is:
 
-It will be tested separately after the LangGraph orchestration work is completed.
+```text
+Incoming Call
+      │
+      ▼
+Intent Detection
+      │
+      ▼
+Has Booking Intent?
+      │
+      ▼
+Property Match
+      │
+      ▼
+Merge Booking Fields
+      │
+      ▼
+Appointment
+      │
+      ├──────────────┬──────────────┐
+      ▼              ▼              ▼
+Google Calendar    Email        CRM Update
+      │              │              │
+      └──────────────┴──────────────┘
+                     │
+                     ▼
+                  Success
+```
+
+### n8n Integration Validation
+
+The workflow was tested using a booking request containing:
+
+```text
+Property: Skyline Residency
+Location: DHA Lahore
+Property type: Apartment
+Bedrooms: 3
+Budget: PKR 30,000,000
+Requested date: 2026-08-15
+Requested time: 14:00
+```
+
+The `Property Match` endpoint successfully extracted and returned:
+
+```text
+requested_date = 2026-08-15
+requested_time = 14:00
+```
+
+These values were then correctly passed through `Merge Booking Fields` into the `Appointment` node.
+
+The appointment was successfully created:
+
+```text
+appointment_id: 11c9c120-a610-4f29-a827-e082cb575df2
+property_name: Skyline Residency
+assigned_employee: Hassan Raza
+meeting_time: Saturday, 15 August 2026 at 02:00 PM
+status: booked
+calendar_event_id: 112jjhi2bakklfvurfb2qto4l0
+```
+
+The downstream Google Calendar, Email, and CRM branches were also executed, followed by the final Success response.
+
+### Important Debugging Fix
+
+During n8n integration testing, the `/properties/match` endpoint initially returned HTTP 500 because the SQLite connection was created in one thread and accessed from another.
+
+The issue was traced to:
+
+```text
+database/sql_retriever.py
+```
+
+The SQLite connection was subsequently made compatible with FastAPI's threaded request handling.
+
+After the fix, `/properties/match` successfully returned the extracted appointment date/time and property match.
+
+### Final n8n Validation
+
+The final Success node returned:
+
+```json
+{
+  "status": "success",
+  "appointment_id": "11c9c120-a610-4f29-a827-e082cb575df2"
+}
+```
+
+Therefore, **n8n is no longer merely prepared or deferred. The core n8n appointment workflow has been successfully tested end to end.**
+
+n8n complements the agent orchestration rather than replacing LangGraph.
 
 The planned architecture is:
 
@@ -519,26 +610,28 @@ Voice / External Trigger
  Calendar Email CRM
 ```
 
-n8n therefore complements the agent orchestration rather than replacing LangGraph.
-
 ---
 
 # ✅ Day 4 Completion Status
 
-| Component                    | Status        |
-| ---------------------------- | ------------- |
-| Google Calendar              | ✅ Complete    |
-| Email Service                | ✅ Complete    |
-| CRM Service                  | ✅ Complete    |
-| Appointment Manager          | ✅ Complete    |
-| Booking Workflow             | ✅ Tested      |
-| Rescheduling Workflow        | ✅ Tested      |
-| Cancellation Workflow        | ✅ Tested      |
-| CRM Integration Test         | ✅ Passed      |
-| Email Integration Test       | ✅ Passed      |
-| End-to-End Appointment Test  | ✅ Passed      |
+| Component                    | Status |
+| ---------------------------- | ------ |
+| Google Calendar              | ✅ Complete |
+| Email Service                | ✅ Complete |
+| CRM Service                  | ✅ Complete |
+| Appointment Manager          | ✅ Complete |
+| Booking Workflow             | ✅ Tested |
+| Rescheduling Workflow        | ✅ Tested |
+| Cancellation Workflow        | ✅ Tested |
+| CRM Integration Test         | ✅ Passed |
+| Email Integration Test       | ✅ Passed |
+| End-to-End Appointment Test  | ✅ Passed |
 | Appointment Intent Detection | ✅ Implemented |
-| n8n Workflow                 | ⏸️ Deferred   |
+| n8n Workflow                 | ✅ Complete & Tested |
+| n8n → FastAPI Integration    | ✅ Passed |
+| n8n Appointment Booking      | ✅ Passed |
+| n8n Calendar/Email/CRM Flow  | ✅ Passed |
+| Final Success Response       | ✅ Passed |
 
 ---
 
@@ -546,19 +639,29 @@ n8n therefore complements the agent orchestration rather than replacing LangGrap
 
 By the end of Day 4, the voice agent is no longer limited to answering questions.
 
-It can now perform real business operations:
+It can now perform real business operations **and orchestrate them through n8n**:
 
 ```text
 Customer
    │
    ▼
-Voice Agent
+Voice / External Trigger
+   │
+   ▼
+n8n Workflow
+   │
+   ▼
+FastAPI
    │
    ├── Understand appointment request
+   │
+   ├── Match property
    │
    ├── Create Calendar booking
    │
    ├── Notify assigned employee
    │
    └── Store customer + appointment in CRM
-```
+   │
+   ▼
+Success Response
