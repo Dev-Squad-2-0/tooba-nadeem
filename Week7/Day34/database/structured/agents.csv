@@ -1,0 +1,9 @@
+agent_id,name,city,phone,email,years_experience,languages_spoken,specialization,assigned_property_ids
+AG001,Hassan Raza,Lahore,+92-300-1234567,hassan.raza@silkdevelopers.com.pk,9,"Urdu, English, Punjabi",High-rise apartment sales,PROP001
+AG002,Ayesha Malik,Lahore,+92-301-2345678,ayesha.malik@silkdevelopers.com.pk,6,"Urdu, English",Villas and independent houses,PROP002
+AG003,Bilal Ahmed Sheikh,Karachi,+92-302-3456789,bilal.sheikh@metrohorizon.com.pk,11,"Urdu, English, Sindhi",Sea-facing high-rise apartments,PROP003
+AG004,Sana Tariq,Karachi,+92-303-4567890,sana.tariq@metrohorizon.com.pk,5,"Urdu, English",Commercial and mixed-use investment sales,PROP004
+AG005,Fahad Nadeem,Islamabad,+92-304-5678901,fahad.nadeem@capitalheights.com.pk,8,"Urdu, English",Plot and plot-file sales for overseas clients,PROP005
+AG006,Mahnoor Baig,Islamabad,+92-305-6789012,mahnoor.baig@capitalheights.com.pk,4,"Urdu, English",Ready apartment resale and rentals,PROP006
+AG007,Usman Ghani,Rawalpindi,+92-306-7890123,usman.ghani@alnoorestates.com.pk,13,"Urdu, English, Potohari",Residential plot schemes,PROP007
+AG008,Zoya Farooq,Rawalpindi,+92-307-8901234,zoya.farooq@alnoorestates.com.pk,7,"Urdu, English",Commercial retail and office leasing/sales,PROP008
