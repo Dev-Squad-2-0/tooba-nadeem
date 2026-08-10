@@ -37,3 +37,20 @@
 
 
 ```
+
+The eventual flow could be:
+```python
+Phone
+ ↓
+LiveKit/SIP
+ ↓
+Deepgram STT
+ ↓
+LangGraph
+ ↓
+Edge-TTS
+ ↓
+LiveKit
+ ↓
+Phone
+```
