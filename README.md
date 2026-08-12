@@ -2,7 +2,7 @@
 
 Hi! I'm **Tooba Nadeem**, an **AI & Data Science Intern** at **NetixSol**.
 
-This repository contains my internship tasks that I do as I build my skills in AI, Data Science, and Python.
+This repository contains my internship tasks that I do as I build my skills in AI & Data Science.
 
 ## 📚 What I'm Learning
 
@@ -29,11 +29,15 @@ This repository contains my internship tasks that I do as I build my skills in A
 - FastAPI
 - OpenRouter
 - OpenAI
-
-# loading :)
-- Chroma, FAISS
+- RAG
+- Chromadb
+- n8n
 - Docker
-- Fish Audio & ElevenLabs (voice AI/ genAI platforms)
+- CI/CD Pipeline
+- Deepgram, Edgetts, Fish Audio, & ElevenLabs (voice AI/ genAI platforms)
+- Vapi, LiveKit
+- Google Calendar API
+- Gmail API
 
 ## 🎯 Goals
 
