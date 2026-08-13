@@ -1,6 +1,4 @@
 ![Meridian Homes Pakistan](./banner.svg)
-# Meridian Homes Pakistan
-## AI-Powered Real Estate Voice Agent
 
 A production-oriented AI voice agent for real estate businesses. The system can communicate with customers in natural UrduLish, understand their property requirements, search a real estate knowledge base, recommend suitable properties, handle common objections, collect customer information, and manage appointments.
 
