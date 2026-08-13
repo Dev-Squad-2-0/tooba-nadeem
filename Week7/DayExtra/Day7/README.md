@@ -1,3 +1,4 @@
+![Meridian Homes Pakistan](./banner.svg)
 # Meridian Homes Pakistan
 ## AI-Powered Real Estate Voice Agent
 
