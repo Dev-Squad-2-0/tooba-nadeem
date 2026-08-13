@@ -1,0 +1,13 @@
+services:
+  voice-agent:
+    build: .
+    image: real-estate-voice-agent:latest
+    container_name: real-estate-voice-agent
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json:ro
+    restart: unless-stopped
