@@ -1,0 +1,98 @@
+name: Tests
+
+# NO real Git/GitHub repository exists in this project as delivered --
+# confirmed via audit (no .git directory). This workflow is prepared and
+# ready but UNVERIFIED until you run `git init`, create a GitHub repo,
+# and push. It has not been executed against a real GitHub Actions
+# runner as part of this work.
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch: {}
+
+jobs:
+  no-api-tests:
+    name: NO-API tests (no external credentials required)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Day 6 evaluation/security/memory/hallucination/performance suites
+      # mock every external SDK (openai, chromadb, langchain_chroma,
+      # langchain_huggingface, Google API libs) via
+      # app/tests/day6/_harness.py, so the full dependency list is not
+      # required to run them. Installing only what the harness actually
+      # imports keeps CI fast and avoids needing any secrets.
+      - name: Install minimal CI dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install langgraph langchain-core fastapi pydantic python-dotenv pandas
+
+      - name: Run Day 6 evaluation suite (NO-API)
+        run: PYTHONPATH=. python app/tests/day6/test_evaluation_suite.py
+
+      - name: Run Day 6 security/prompt-injection suite (NO-API)
+        run: PYTHONPATH=. python app/tests/day6/test_security_injection.py
+
+      - name: Run Day 6 memory accuracy suite (NO-API)
+        run: PYTHONPATH=. python app/tests/day6/test_memory_accuracy.py
+
+      - name: Run Day 6 hallucination rate suite (NO-API)
+        run: PYTHONPATH=. python app/tests/day6/test_hallucination_rate.py
+
+      - name: Run Day 6 performance suite (NO-API, mocked-I/O latency only)
+        run: PYTHONPATH=. python app/tests/day6/test_performance.py
+
+  # ---------------------------------------------------------------------
+  # Optional integration tests requiring real secrets (Deepgram API key,
+  # OpenRouter/LLM key, Google Calendar credentials, SMTP credentials).
+  # Manual trigger only (workflow_dispatch), and only useful once the
+  # corresponding GitHub Actions secrets are configured in the repo
+  # settings. Kept as a SEPARATE job from no-api-tests so a missing
+  # secret never blocks the default CI-safe suite above.
+  # ---------------------------------------------------------------------
+  real-api-integration-tests:
+    name: REAL-API integration tests (requires secrets, manual trigger)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install full dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run real integration tests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: |
+          echo "Real-API tests (test_calendar.py, test_email.py, test_appointments.py, etc.)"
+          echo "require credentials.json to be provided as a repository secret and written"
+          echo "to disk here before running -- not configured in this workflow, since doing"
+          echo "so safely depends on decisions (which Google account, which calendar) that"
+          echo "shouldn't be made by a generated CI file. Add that step yourself if/when you"
+          echo "want this job to actually run against real services."
