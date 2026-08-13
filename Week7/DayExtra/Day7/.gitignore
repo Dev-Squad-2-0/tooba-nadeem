@@ -1,0 +1,27 @@
+# Secrets — never commit these
+.env
+credentials.json
+token.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# SQLite / vector store artifacts (rebuilt at container startup)
+*.db
+*.sqlite3
+chroma_db/
+vector_store/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Docker
+*.log
