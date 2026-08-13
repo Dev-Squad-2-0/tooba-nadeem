@@ -1,0 +1,32 @@
+# Secrets -- never bake these into the image
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+
+# Version control / CI
+.git
+.github
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Data that should be built at runtime or mounted, not baked in
+database/chroma/
+database/property_data.db
+logs/
+
+# Test artifacts / scratch
+sample_audio/
+test_output/
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
