@@ -1,0 +1,37 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Meridian Homes Pakistan — AI-Powered Real Estate Voice Agent</title>
+<desc>Banner with a house icon and voice waveform representing an AI real estate voice agent, on a dark navy background with a gold accent.</desc>
+
+<rect width="1200" height="300" fill="#0B1220"/>
+<rect x="0" y="0" width="10" height="300" fill="#D4AF37"/>
+
+<g transform="translate(70,95)" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M0 55 L55 10 L110 55" />
+  <path d="M15 45 L15 100 L95 100 L95 45" />
+  <rect x="45" y="65" width="20" height="35" fill="#D4AF37" stroke="none"/>
+</g>
+
+<g transform="translate(150,150)">
+  <rect x="0" y="-6" width="6" height="12" rx="3" fill="#4FD1C5"/>
+  <rect x="14" y="-16" width="6" height="32" rx="3" fill="#4FD1C5"/>
+  <rect x="28" y="-24" width="6" height="48" rx="3" fill="#4FD1C5"/>
+  <rect x="42" y="-14" width="6" height="28" rx="3" fill="#4FD1C5"/>
+  <rect x="56" y="-8" width="6" height="16" rx="3" fill="#4FD1C5"/>
+</g>
+
+<text x="260" y="120" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#F5F5F0" letter-spacing="1">Meridian Homes Pakistan</text>
+<text x="260" y="160" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#9CA8B8" letter-spacing="0.5">AI-Powered Real Estate Voice Agent</text>
+
+<g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#4FD1C5">
+  <text x="262" y="205">FastAPI</text>
+  <text x="345" y="205">LangGraph</text>
+  <text x="450" y="205">RAG</text>
+  <text x="500" y="205">Deepgram</text>
+  <text x="600" y="205">Edge-TTS</text>
+  <text x="695" y="205">Docker</text>
+</g>
+
+<line x1="260" y1="220" x2="1130" y2="220" stroke="#1E293B" stroke-width="1"/>
+<text x="260" y="248" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6B7688">Speaks natural UrduLish · Recommends properties · Books appointments</text>
+
+</svg>
